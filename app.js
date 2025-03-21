@@ -30,3 +30,8 @@ window.addEventListener('resize', () => {
         navbar.style.display = 'none'
     }
 })
+
+
+// ScrollTriggers
+gsap.registerPlugin('ScrollTrigger')
+
