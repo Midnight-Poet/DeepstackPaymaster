@@ -690,7 +690,7 @@ section {
     }
     & .sub-sec {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         justify-content: space-between;
         gap: 20px;
         overflow-x: scroll;
@@ -706,7 +706,7 @@ section {
             border-radius: 10px;
             overflow: hidden;
             & img {
-                width: 100%;
+                width: 40%;
             }
             & > div {
                 padding: 20px;
