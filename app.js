@@ -190,26 +190,29 @@ let slide = document.querySelector('.slider')
 let slidelength = slide.children[0].clientWidth
 let nextBtn = document.querySelector('.next')
 let prevBtn = document.querySelector('.prev')
+let slideAnimation
+let slideAnimation2
 
 slide.scrollBy(slidelength / 1.4, 0)
 
-let slideAnimation = () => {
+slideAnimation = () => {
     slide.scrollBy(slidelength + 10, 0)
 }
-let slideAnimation2 = () => {
+slideAnimation2 = () => {
     slide.scrollBy(-slidelength + 10, 0)
 }
-slide.addEventListener('keydown', event => {
-    if (event.key == 'ArrowRight') {
-        event.preventDefault()
-        slideAnimation()
-    } else if (event.key == 'ArrowLeft') {
-        event.preventDefault()
-        slideAnimation2()
-    } else{
-        null
+if(window.innerWidth < 800) {
+    slide.scrollBy(0, 0)
+
+    slideAnimation = () => {
+        slide.scrollBy(slidelength + 20, 0)
     }
-})
+    slideAnimation2 = () => {
+        slide.scrollBy(-slidelength + 20, 0)
+    }
+}
+// })
+
 
 nextBtn.addEventListener('click', slideAnimation)
 prevBtn.addEventListener('click', slideAnimation2)
